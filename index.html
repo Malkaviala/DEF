@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="go2.css">
+    <title>DEF Tracker</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>DEF Tracker</h1>
+    </div>
+
+    <!-- Add/Edit Entry Page -->
+    <div id="addPage" class="page active">
+        <div class="card">
+            <form id="defForm">
+                <div class="form-group">
+                    <h2 id="formTitle">New Entry</h2>
+                    <label for="date">Date</label>
+                    <input type="date" id="date" required>
+                    
+                    <label for="quantity">Quantity (Gallons)</label>
+                    <input type="number" id="quantity" step="0.01" min="0" required>
+                    
+                    <label for="pricePerGallon">Price per Gallon ($)</label>
+                    <input type="number" id="pricePerGallon" step="0.01" min="0" required>
+                    
+                    <label for="odometer">Odometer Reading</label>
+                    <input type="number" id="odometer" min="0" required>
+                    
+                    <button type="submit">Save Entry</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- View Data Page -->
+    <div id="viewPage" class="page">
+        <div class="card">
+            <h2>Summary</h2>
+            <div class="summary">
+                <div class="summary-item">
+                    <h3>Total DEF</h3>
+                    <p><span id="totalDef">0</span> gal</p>
+                </div>
+                <div class="summary-item">
+                    <h3>Total Cost</h3>
+                    <p>$<span id="totalCost">0</span></p>
+                </div>
+                <div class="summary-item">
+                    <h3>Avg. Cost/Gallon</h3>
+                    <p>$<span id="avgCost">0</span></p>
+                </div>
+                <div class="summary-item">
+                    <h3>MPG</h3>
+                    <p><span id="consumptionRate">0</span></p>
+                </div>
+            </div>
+        </div>
+
+        <h2>History</h2>
+        <div id="entriesList"></div>
+    </div>
+
+    <!-- Tab Bar -->
+    <div class="tab-bar">
+        <a href="#" class="tab active" data-page="addPage">
+            <div class="tab-icon">➕</div>
+            Add Entry
+        </a>
+        <a href="#" class="tab" data-page="viewPage">
+            <div class="tab-icon">📊</div>
+            View Data
+        </a>
+    </div>
+
+<script type="module" src="app.js"></script>
+
+ 
+</body>
+</html>
